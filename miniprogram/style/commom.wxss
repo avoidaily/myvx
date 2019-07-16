@@ -1,0 +1,164 @@
+/* 公用样式 */
+/* 引入： @import "../../style/common.wxss" */
+
+/* 三：原创 */
+.original-section{
+  margin-bottom: 30rpx;
+  background: #fff;
+  padding: 20rpx;
+  /* height:500rpx; */
+}
+/* 一类 */
+.recommend-list{
+    margin-bottom:5rpx;
+    background: #fff;
+    padding: 10rpx;
+    margin-top:12rpx;
+}
+.news-card{
+  padding: 20rpx 10rpx;
+  border-bottom: 1px solid #f5f7f9;
+}
+
+.news-pic{
+  margin-top: 15rpx;
+
+}
+.news-pic-img{
+  display: block;
+  width: 690rpx;
+  height: 328rpx;
+}
+.detail{
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 15rpx;
+}
+.subdetail{
+  margin-right: 15rpx;
+}
+
+/* 二类 */
+.subdetail-dujia{
+  margin-right: 15rpx;
+  color: #d81e06;
+}
+.news-smpic{
+  margin-top: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.news-pic-smimg{
+  display: inline-block;
+  width: 260rpx;
+  height:160rpx;
+  background-color: #fff;
+  margin:0 3rpx;
+}
+
+/* 三类 */
+.three{
+  display:flex;
+  justify-content: space-between;
+}
+.news-left{
+  margin-right: 25rpx;
+}
+
+/* 要闻 */
+.today-news{
+  margin-bottom: 30rpx;
+  background: #fff;
+  padding: 25rpx;
+  height: auto;
+}
+
+.channel-title{
+  font-weight: bold;
+  font-size: 42rpx;
+  color:#d81e06;
+  margin-bottom:15rpx;
+}
+.news-wrap{
+  display: flex;
+  justify-content: space-between;
+  font-size:38rpx;
+  padding:20rpx 0 56rpx 0;
+  border-bottom:1px solid #f7f7f7;
+}
+.news-wrap-big{
+  display: flex;
+  justify-content: space-between;
+  font-size:38rpx;
+  margin:30rpx 0;
+  border-bottom:1px solid #f7f7f7;
+}
+.detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.sec-flex{
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 5rpx;
+}
+.subdetail{
+  font-size: 28rpx;
+  color:#999;
+}
+.news-smimg{
+  display: inline-block;
+  width: 245rpx;
+  height:175rpx;
+  margin:0 3rpx;
+}
+
+
+/* 推荐 */
+.put-smimg{
+  width:703rpx;
+  height:470rpx;
+  margin:15rpx auto;
+}
+/* 三图 */
+.put-smimg-flex{
+  display: flex;
+  justify-content: space-between;
+}
+.put-smimg-three{
+  width:227rpx;
+  height:195rpx;
+  margin:30rpx 5rpx;
+}
+
+.put-detail{
+  display:flex;
+  justify-content: flex-start;
+  margin-bottom:40rpx;
+}
+
+/* 视频 */
+.v-demo{
+  width: 100%;
+  margin-bottom: 80rpx;
+}
+.video{
+  width:100%;
+  z-index: 0;
+}
+.v-title{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  width:100%;
+  font-size:30rpx;
+  color:#333;
+  margin-bottom:20rpx;
+
+  
+}
+
+
+
+
+

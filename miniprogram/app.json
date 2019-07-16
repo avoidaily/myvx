@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/newsChannel/newsChannel",
+    "pages/home/home",
+    "pages/profile/profile",
+    "pages/wynew/wynew",
+    "pages/ex/ex",
+    "pages/ex2/ex2",
+    "pages/ex3/ex3"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d81e06",
+    "navigationBarTitleText": "网易新闻",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/select_home.png"
+      },
+      {
+        "pagePath": "pages/wynew/wynew",
+        "text": "快讯",
+        "iconPath": "images/kuaixun.png",
+        "selectedIconPath": "images/select_kuaixun.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/select_me.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+<!--pages/wynew/wynew.wxml-->
+
+<!-- 娱乐列表 -->
+<!-- <view class='today-news'>
+  <view class='news-wrap-big' wx:for="{{yulepic}}" wx:key="{{index}}">
+    <view class='title-flex'>
+      <view class='title'>{{item.title}}</view>
+      <view class='put-smimg-flex'>
+        <image class='put-smimg-three' src="{{item.imgsrc}}"></image>
+        <image class='put-smimg-three' src='{{item.imgextra[0].imgsrc}}'></image>
+        <image class='put-smimg-three' src='{{item.imgextra[1].imgsrc}}'></image>
+      </view>
+      <view class='put-detail'>
+        <view class='subdetail'>{{item.source}}</view>
+        <view class='subdetail'>浏览:{{item.replyCount}}</view>
+        <view class='subdetail'>{{item.ptime}}</view>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<view class='today-news'>
+  <view class='news-wrap-big' wx:for="{{yule}}" wx:key="{{index}}">
+    <view class='title-flex' bindtap='yulejump' data-url="{{item.url}}">
+      <view class='title'>{{item.title}}</view>
+      <image class='put-smimg' src="{{item.imgsrc}}"></image>
+      <view class='put-detail'>
+        <view class='subdetail'>{{item.source}}</view>
+        <view class='subdetail'>浏览:{{item.replyCount}}</view>
+        <view class='subdetail'>{{item.ptime}}</view>
+      </view>
+    </view>
+  </view>
+</view>

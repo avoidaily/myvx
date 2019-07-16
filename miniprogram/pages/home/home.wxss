@@ -1,0 +1,123 @@
+/* pages/home/home.wxss */
+/* 公用样式 */
+@import "../../style/commom.wxss"
+
+/* 一：要闻 */
+/* 下拉菜单 */
+.home .van-tab--active{
+  color:#d81e06;
+  font-size:40rpx;
+}
+.home .van-tab{font-size: 40rpx;}
+.home .van-tabs__line{
+  width: 40rpx!important;
+  margin-left: 43rpx;
+}
+.van-tabs__wrap{
+  z-index: 999!important;
+}
+.home .van-tabs__nav{
+  height:auto;
+  width:100%;
+  position: fixed;
+  background-color:#fff;
+}
+.wap-section{
+  padding: 25rpx;
+  font-size: 35rpx;
+  color:#555;
+  background-color: #f8f8f8;
+  overflow:hidden;
+  height:420rpx;
+  transition: all .3s linear;
+  position: relative;
+}
+.fold{
+  overflow:hidden;
+  height:160rpx;
+  transition: all .3s linear;
+}
+
+.yaowen-sort{
+  text-align: left;
+  margin:20rpx 25rpx;
+  float:left;
+}
+
+.up-icon{
+  color:#666;
+  background-color: #f8f8f8;
+  position: absolute;
+  bottom: 0;right:0;
+  z-index:20;
+  text-align:center;
+  width:140rpx;
+  height:85rpx;
+  margin:0;
+  padding:0;
+  /* padding-top: 30rpx; */
+  padding-right:30rpx;
+  transform: rotate(0deg);
+}
+
+.down-icon{
+  transform:rotate(180deg);
+  text-align:center;
+  position: absolute;
+  bottom:0;right:0;
+  z-index:20;
+  width:161rpx;
+  height:55rpx;
+  margin:0;
+  padding:0;
+  padding-top: 35rpx;
+  padding-right:15rpx;
+}
+
+/* 轮播 */
+.swiper{
+  width: 100%;
+  height: 350rpx;
+  padding: 40rpx 0;
+}
+.swiper-item{
+  width: 100%;
+  height: 350rpx;
+  position: relative;
+  overflow: hidden;
+}
+.banner{
+  width: 95%;
+  height: 350rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  margin-left: 18rpx;
+}
+.new-intr{
+  box-sizing: border-box;
+  width: 95%;
+  height: 85rpx;
+  border-radius: 20rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0rpx;
+  background: rgba(32,28,28,0.3);
+  font-size: 28rpx;
+  color: #fff;
+  margin-left: 18rpx;
+  overflow: hidden;
+  padding: 8rpx 15rpx;
+}
+
+
+
+/* 视频 */
+
+
+
+
+
+
+
+
+

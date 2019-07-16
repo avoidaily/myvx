@@ -1,0 +1,88 @@
+
+<view class='body'>
+  <view class='profile'>
+    <!-- 1 -->
+    <view class='profile-img-name'>
+      <!-- 公开头像 -->
+      <view class='profile-img'>
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <!-- 公开昵称 -->
+      <view class='profile-name'>
+        <open-data type="userNickName"></open-data>
+      </view>
+
+    </view>
+    <!-- 2 -->
+    <!-- 右滑 设置 -->
+    <van-button class='van-btn' bindtap="open">
+      <view class='set'>
+        <image class='set-img' src='/images/set.png'>
+          <!-- 右滑页面 弹出框内容宽高-->
+          <van-popup class='popup' show="{{show}}" position="right" overlay="{{false}}">
+            <!-- 关闭 返回 -->
+            <van-nav-bar custom-class="nav-bar" left-text="返回" left-arrow show="{{show}}" bindtap="onClose"/>
+            <!-- 内容 -->
+            <view>
+              <view class='panel-swich'>
+                <view class='panel-left'>
+                  <image class='icon-img' src='/images/list.png'></image>
+                  <van-panel class='van-panel' title="早晚报推荐" desc="每天8:00、18:00,第一时间获得早晚报"></van-panel>
+                </view>
+                <van-switch active-color="#d81e06" checked="{{ checked }}" bind:change="onChange" />
+              </view>
+              
+              <view class='panel-swich'>
+                <view class='panel-left'>
+                  <image class='icon-img' src='/images/clock.png'></image>
+                  <van-panel class='van-panel' title="热点新闻推送" desc="每天15:00,知晓今日热点新闻"></van-panel>
+                </view>
+                <van-switch active-color="#d81e06" checked="{{ Change }}" bind:change="Change" />
+              </view>
+
+              <view class="panel-swich">
+                <view class='panel-left'>
+                  <image class='icon-img' src='/images/warning.png'></image>
+                  <text class='giveback'>意见反馈</text>
+                </view>
+                <image class='icon-img' src='/images/right-arrow.png'></image>
+              </view>
+
+            </view>
+            
+          </van-popup>
+          
+        </image>设置
+
+      </view>
+    </van-button>
+  </view>
+
+  <!-- 通知与评论 -->
+  <view class='notice-comment'>
+    <van-tabs animated custom-class='mytabs'>
+      <van-tab class='mytab' title="通知">
+        <image src='/images/notice.png'></image>
+        <view class='tab-font'>暂无通知</view>
+      </van-tab>
+      <van-tab class='mytab' title="评论">
+        <image src='/images/comment.png'></image>
+        <view class='tab-font'>暂无评论</view>
+      </van-tab>
+    </van-tabs>
+  </view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+<!--pages/ex/ex.wxml-->
+
+
+<web-view src="{{link}}"></web-view>

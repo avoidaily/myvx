@@ -1,0 +1,4 @@
+<!--pages/ex3/ex3.wxml-->
+
+
+<web-view src="{{url}}"></web-view>

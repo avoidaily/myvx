@@ -1,0 +1,130 @@
+<!--pages/newsChannel/newsChannel.wxml-->
+
+<!-- 顶部标题+导航栏 -->
+<view class='wap-channel-nav'>
+  <!-- 1:标题 -->
+  <view class='channel-nav'>
+    <view class='channel-name'>{{channelName}}</view>
+  </view>
+  <!-- 2:导航栏 -->
+  <view class='subchannel-bar'>
+    <van-tabs active="{{active}}">
+      <van-tab title="{{title[0]}}">
+        <view class='tab-content'>
+          <!-- 大图 -->
+          
+          <swiper class='swiper'
+            previous-margin="{{ previousMargin }}"
+            next-margin="{{ nextMargin }}"
+            autoplay="{{ autoplay }}"
+            interval="{{interval}}" 
+            duration="{{duration}}">
+            <swiper-item class='section-focus' wx:for="{{sectionFocus}}" wx:key="{{index}}">
+              <image class='focus-img' src="{{item.img}}"></image>
+              <text class='focus-title'>{{item.title}}</text>
+            </swiper-item>
+          </swiper>
+          
+          <!-- 调用接口 dy sports -->
+          <scroll-view scroll-y style="height: {{windowHeight}}px;" bindscrolltolower="loadadd" >
+            <view class='today-news'>
+              <view class='news-wrap' wx:for="{{yule}}" wx:key="{{index}}">
+                <view class='title-flex' bindtap='yulejump' data-url="{{item.url}}">
+                  <view class='title'>{{item.title}}</view>
+                  <view class='detail'>
+                    <view class='sec-flex'>
+                      <view class='subdetail'>{{item.source}}</view>
+                      <view class='subdetail'>浏览:{{item.tcount}}</view>
+                    </view>
+                    <view class='subdetail'>{{item.ptime}}</view>
+                  </view>
+                </view>
+                <view>
+                  <image class='news-smimg' src="{{item.imgsrc}}"></image>
+                </view>
+              </view>  
+            </view>
+          </scroll-view>
+        </view>
+      </van-tab>
+
+      <van-tab title="{{title[1]}}">
+        <!-- 调用接口 sports -->
+        <view class='today-news'>
+          <view class='news-wrap' wx:for="{{sports}}" wx:key="{{index}}">
+            <view class='title-flex' bindtap='jump' data-link="{{item.link}}">
+              <view class='title'>{{item.title}}</view>
+              <view class='detail'>
+                <view class='sec-flex'>
+                  <view class='subdetail'>{{item.source}}</view>
+                  <view class='subdetail'>浏览:{{item.tcount}}</view>
+                </view>
+                <view class='subdetail'>{{item.ptime}}</view>
+              </view>
+            </view>
+            <view>
+              <image class='news-smimg' src="{{item.picInfo[0].url}}"></image>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+
+      <van-tab title="{{title[2]}}">
+        <!-- 调用接口 money -->
+        <view class='today-news'>
+          <view class='news-wrap' wx:for="{{money}}" wx:key="{{index}}">
+            <view class='title-flex' bindtap='jump' data-link="{{item.link}}">
+              <view class='title'>{{item.title}}</view>
+              <view class='detail'>
+                <view class='sec-flex'>
+                  <view class='subdetail'>{{item.source}}</view>
+                  <view class='subdetail'>浏览:{{item.tcount}}</view>
+                </view>
+                <view class='subdetail'>{{item.ptime}}</view>
+              </view>
+            </view>
+            <view>
+              <image class='news-smimg' src="{{item.picInfo[0].url}}"></image>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+
+      <van-tab title="{{title[3]}}">
+        <!-- 调用接口 tech -->
+        <view class='today-news'>
+          <view class='news-wrap' wx:for="{{tech}}" wx:key="{{index}}">
+            <view class='title-flex' bindtap='jump' data-link="{{item.link}}">
+              <view class='title'>{{item.title}}</view>
+              <view class='detail'>
+                <view class='sec-flex'>
+                  <view class='subdetail'>{{item.source}}</view>
+                  <view class='subdetail'>浏览:{{item.tcount}}</view>
+                </view>
+                <view class='subdetail'>{{item.ptime}}</view>
+              </view>
+            </view>
+            <view>
+              <image class='news-smimg' src="{{item.picInfo[0].url}}"></image>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

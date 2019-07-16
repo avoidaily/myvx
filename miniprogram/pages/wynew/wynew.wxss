@@ -1,0 +1,3 @@
+/* pages/wynew/wynew.wxss */
+/* 公用样式 */
+@import "../../style/commom.wxss"

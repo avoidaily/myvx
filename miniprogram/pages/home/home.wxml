@@ -1,0 +1,194 @@
+<view class='home'>
+  <van-tabs active="{{ active }}">
+    <!-- 1 -->
+    <van-tab title="要闻">
+      <!-- 上拉 -->
+      <!-- 通过事件响应动态改变数值，进而改变view组件的宽高样式。 -->
+      <view class="wap-section {{ isFold ? isOpen ? '' : 'fold' : ''}}" >
+        <view class="yaowen-sort" wx:for="{{list}}" wx:key="{{index}}" data-channelid="{{item.id}}" bindtap='jumpChannel'>{{item}}</view>
+        <van-icon class="down-icon {{isFold ? 'up-icon' :'' }}" name="arrow-up" wx:if="{{isFold}}" bindtap='onChange'/>
+      </view>
+      <!-- 轮播 -->
+      <view>
+        <swiper class='swiper'
+        previous-margin="{{ previousMargin }}"
+        next-margin="{{ nextMargin }}"
+        autoplay="{{ autoplay }}"
+        interval="{{interval}}" 
+        duration="{{duration}}">
+          <swiper-item class='swiper-item' wx:for="{{newIntr}}" wx:key="index">
+            <text  class='new-intr'>网易新闻：{{item.item}}</text>
+            <image  src="{{item.img}}" class='banner'></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <!-- 新闻列表 -->
+      <view class='today-news'>
+        <!-- 内容 -->
+        <view class='channel-title'>今日要闻</view>
+        <view class='news-wrap' wx:for="{{tech}}" wx:key="{{index}}">
+          <view class='title-flex' bindtap='jump' data-link="{{item.link}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='detail'>
+              <view class='sec-flex'>
+                <view class='subdetail'>{{item.source}}</view>
+                <view class='subdetail'>浏览:{{item.tcount}}</view>
+              </view>
+              <view class='subdetail'>{{item.ptime}}</view>
+            </view>
+          </view>
+          <view>
+            <image class='news-smimg' src="{{item.picInfo[0].url}}"></image>
+          </view>
+        </view>
+
+        <view class='channel-title'>汽车</view>
+        <view class='news-wrap' wx:for="{{auto}}" wx:key="{{index}}">
+          <view class='title-flex' bindtap='jump' data-link="{{item.link}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='detail'>
+              <view class='sec-flex'>
+                <view class='subdetail'>{{item.source}}</view>
+                <view class='subdetail'>浏览:{{item.tcount}}</view>
+              </view>
+              <view class='subdetail'>{{item.ptime}}</view>
+            </view>
+          </view>
+          <view>
+            <image class='news-smimg' src="{{item.picInfo[0].url}}"></image>
+          </view>
+        </view>
+
+        <view class='channel-title'>财经</view>
+        <view class='news-wrap' wx:for="{{money}}" wx:key="{{index}}">
+          <view class='title-flex' bindtap='jump' data-link="{{item.link}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='detail'>
+              <view class='sec-flex'>
+                <view class='subdetail'>{{item.source}}</view>
+                <view class='subdetail'>浏览:{{item.tcount}}</view>
+              </view>
+              <view class='subdetail'>{{item.ptime}}</view>
+            </view>
+          </view>
+          <view>
+            <image class='news-smimg' src="{{item.picInfo[0].url}}"></image>
+          </view>
+        </view>
+
+        <view class='channel-title'>体育</view>
+        <view class='news-wrap' wx:for="{{sports}}" wx:key="{{index}}">
+          <view class='title-flex' bindtap='jump' data-link="{{item.link}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='detail'>
+              <view class='sec-flex'>
+                <view class='subdetail'>{{item.source}}</view>
+                <view class='subdetail'>浏览:{{item.tcount}}</view>
+              </view>
+              <view class='subdetail'>{{item.ptime}}</view>
+            </view>
+          </view>
+          <view>
+            <image class='news-smimg' src="{{item.picInfo[0].url}}"></image>
+          </view>
+        </view>
+        
+        <view class='channel-title'>生活</view>
+        <view class='news-wrap' wx:for="{{dy}}" wx:key="{{index}}">
+          <view class='title-flex' bindtap='jump' data-link="{{item.link}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='detail'>
+              <view class='sec-flex'>
+                <view class='subdetail'>{{item.source}}</view>
+                <view class='subdetail'>浏览:{{item.tcount}}</view>
+              </view>
+              <view class='subdetail'>{{item.ptime}}</view>
+            </view>
+          </view>
+          <view>
+            <image class='news-smimg' src="{{item.picInfo[0].url}}"></image>
+          </view>
+        </view>
+
+      </view>
+    </van-tab>
+
+    <!-- 2 -->
+    <van-tab title="推荐">
+      <scroll-view scroll-y style="height: {{windowHeight}}px;" bindscrolltolower="loadadd" >
+        <view class='today-news'>
+          <view class='news-wrap-big' wx:for="{{template}}" wx:key="{{index}}">
+            <view class='title-flex' bindtap='jumptwo' data-url="{{item.url}}">
+              <view class='title'>{{item.title}}</view>
+              <image class='put-smimg' src="{{item.imgsrc}}"></image>
+              <view class='put-detail'>
+                <view class='subdetail'>{{item.source}}</view>
+                <view class='subdetail'>浏览:{{item.replyCount}}</view>
+                <view class='subdetail'>{{item.ptime}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </van-tab>
+
+    <!-- 3 -->
+    <van-tab title="视频">
+      <view class='today-news'>
+        <view class='v-demo' wx:for="{{videoList}}" wx:key="{{index}}">
+          <view class='v-title'>{{item.data.content.data.description}}</view>
+          <video class='video' 
+          vslide-gesture="true"
+          auto-pause-if-navigate="true"
+           src='{{item.data.content.data.playUrl}}'></video>
+          <view class='put-detail'>
+            <view class='subdetail'>收藏:{{item.data.content.data.consumption.collectionCount}}</view>
+            <view class='subdetail'>浏览:{{item.data.content.data.consumption.replyCount}}</view>
+            <view class='subdetail'>分享:{{item.data.content.data.consumption.shareCount}}</view>
+          </view>
+        </view>
+        <!-- <view class='v-demo' wx:for="{{videomore}}" wx:key="{{index}}">
+          <view class='v-title'>{{item.data.content.data.description}}</view>
+          <video class='video' 
+          vslide-gesture="true"
+          auto-pause-if-navigate="true"
+           src='{{item.data.content.data.playUrl}}'></video>
+          <view class='put-detail'>
+            <view class='subdetail'>收藏:{{item.data.content.data.consumption.collectionCount}}</view>
+            <view class='subdetail'>浏览:{{item.data.content.data.consumption.replyCount}}</view>
+            <view class='subdetail'>分享:{{item.data.content.data.consumption.shareCount}}</view>
+          </view>
+        </view>
+        <view class='v-demo' wx:for="{{videobest}}" wx:key="{{index}}">
+          <view class='v-title'>{{item.data.title}}</view>
+          <video class='video' 
+          vslide-gesture="true"
+          auto-pause-if-navigate="true"
+           src='{{item.data.playUrl}}'></video>
+          <view class='put-detail'>
+            <view class='subdetail'>收藏:{{item.data.consumption.collectionCount}}</view>
+            <view class='subdetail'>浏览:{{item.data.consumption.replyCount}}</view>
+            <view class='subdetail'>分享:{{item.data.consumption.shareCount}}</view>
+          </view>
+        </view> -->
+      </view>
+    </van-tab>
+
+  </van-tabs>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
